@@ -184,6 +184,83 @@ main { flex: 1; }
 .card-duo .step-card { margin: 18px 0 0; }
 @media (max-width: 640px) { .card-duo { grid-template-columns: 1fr; } }
 
+/* ---------- horizontal list cards (projects index, category pages) ---------- */
+.list-cards {
+  width: min(880px, 92%);
+  margin: 22px auto 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.list-card {
+  background: var(--ink);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  text-decoration: none;
+}
+.list-card .thumb {
+  flex: none;
+  width: 290px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  place-items: center;
+}
+.list-card .thumb img { border-radius: 8px; width: 100%; max-height: 190px; object-fit: cover; }
+.list-card h3 { color: var(--cyan); font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.list-card p { color: #e8e8e8; font-size: 12.5px; line-height: 1.55; margin: 0; }
+
+/* ---------- reviews ---------- */
+.reviews { width: min(880px, 92%); margin: 22px auto 40px; }
+.review-card { background: var(--ink); border-radius: 22px; padding: 20px 22px; margin-bottom: 24px; }
+.review-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.review-name { color: var(--cyan); font-size: 14px; font-weight: 600; }
+.stars { color: var(--cyan); letter-spacing: 3px; font-size: 13px; }
+.review-tag { font-size: 11.5px; color: #ddd; margin: 8px 0 10px; display: flex; align-items: center; gap: 7px; }
+.review-tag::before { content: '\2611'; color: var(--cyan); font-size: 14px; }
+.review-card p { color: #e9e9e9; font-size: 12.5px; line-height: 1.6; margin-bottom: 8px; }
+.review-card .carousel { margin: 14px 0 2px; }
+.review-card .carousel img { max-height: 430px; width: 100%; object-fit: cover; }
+
+/* ---------- forms (review / contact) ---------- */
+.form-card { background: var(--ink); border-radius: 22px; padding: 24px; width: min(880px, 92%); margin: 12px auto 60px; }
+.form-card label { display: block; color: #fff; font-size: 12.5px; font-weight: 600; margin: 14px 0 5px; }
+.form-card input[type="text"], .form-card input[type="email"], .form-card textarea, .form-card select {
+  width: 100%;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  color: #eee;
+  padding: 9px 11px;
+  font: inherit;
+  font-size: 12.5px;
+}
+.form-card textarea { min-height: 120px; resize: vertical; }
+.form-card .hint { color: #999; font-size: 11px; margin-top: 4px; }
+.form-card .radio-row { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 6px; }
+.form-card .radio-row label { display: flex; align-items: center; gap: 6px; margin: 0; font-weight: 400; color: #ddd; }
+.form-card .submit {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background: #0e7f96;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.form-card .submit:hover { background: var(--cyan-deep); }
+
 /* ---------- footer ---------- */
 .site-footer {
   display: flex;
@@ -223,6 +300,10 @@ main { flex: 1; }
 .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 26px 0; border-radius: 14px; }
 .carousel img { scroll-snap-align: center; max-height: 420px; border-radius: 14px; flex: none; max-width: 100%; object-fit: cover; }
 
+@media (max-width: 700px) {
+  .list-card { flex-direction: column; align-items: stretch; }
+  .list-card .thumb { width: 100%; }
+}
 @media (max-width: 640px) {
   .site-header, .site-footer { padding-left: 22px; padding-right: 22px; }
   .product-head { flex-direction: column; }
