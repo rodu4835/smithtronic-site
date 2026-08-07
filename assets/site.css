@@ -184,6 +184,29 @@ main { flex: 1; }
 .card-duo .step-card { margin: 18px 0 0; }
 @media (max-width: 640px) { .card-duo { grid-template-columns: 1fr; } }
 
+/* ---------- open-source framing ---------- */
+.oss-price { text-align: right; margin: 8px 0; }
+.oss-price .free { font-size: 22px; font-weight: 600; color: var(--cyan); display: block; }
+.oss-price.retired .free { color: #9a9a9a; }
+.oss-price .was { font-size: 11.5px; color: #666; }
+.oss-banner {
+  width: min(880px, 92%);
+  margin: 18px auto 0;
+  background: var(--ink);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.oss-banner p { color: #e8e8e8; font-size: 12.5px; margin: 0; line-height: 1.5; }
+.oss-banner strong { color: var(--cyan); }
+.oss-banner .btn-row { margin: 0; }
+.card .tag-free { color: var(--cyan); font-weight: 600; font-size: 15px; margin-top: auto; }
+.card .tag-retired { color: #9a9a9a; font-weight: 600; font-size: 14px; margin-top: auto; }
+
 /* ---------- horizontal list cards (projects index, category pages) ---------- */
 .list-cards {
   width: min(880px, 92%);
