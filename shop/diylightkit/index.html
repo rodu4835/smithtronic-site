@@ -14,7 +14,7 @@
 <header class="site-header">
   <a class="logo" href="../../"><img src="../../assets/img/logo.svg" alt="SMITHtRONiC"></a>
   <nav>
-    <a href="../" class="active">Shop</a>
+    <a href="../" class="active">Designs</a>
     <a href="../../reviews/">Reviews</a>
     <a href="../../projects/">Projects</a>
     <a href="../../clients/">Clients</a>
@@ -34,17 +34,25 @@
       <div class="product-info">
         <h4>Product Description:</h4>
         <p>A custom-designed DIY light kit that flush-mounts into the 2006&ndash;2008
-        Subaru Forester Sports bumper. This kit includes only the housings, retainers,
-        and hardware&mdash;so you can install your own preferred lights.</p>
+        Subaru Forester Sports bumper. It is the housings, retainers, and hardware
+        only&mdash;you choose and supply the lights.</p>
+        <p>Now that the design is open source, the split between this and the assembled
+        kit has mostly collapsed: the two only ever differed in whether the lights came
+        pre-wired, and the printed parts are the same files either way. This is the page
+        to read if you are picking your own light&mdash;the bracket spec below is what
+        that light has to meet.</p>
         <h4>Vehicle Fitment:</h4>
         <p>2006 - 2008 Subaru Forester Sports (SG w/ Facelift)</p>
-        <p class="price-lg">$150</p>
+        <p class="oss-price">
+          <span class="free">Free &mdash; Open Source</span>
+          <span class="was">originally sold as a $150 DIY kit</span>
+        </p>
         <div class="buy-row">
           <a class="btn" href="./diyinstallguide/">Installation Guide</a>
           <a class="btn" href="../../reviews/">Customer Feedback</a>
-          <a class="btn primary" href="https://www.thingiverse.com/SMITHtRONiC" title="Kit sales have ended — the design is now open source">Buy Now</a>
+          <a class="btn primary" href="https://www.thingiverse.com/SMITHtRONiC">Download the Files</a>
         </div>
-        <p class="legal-note">By purchasing, you agree to the SMITHtRONiC <a href="../../terms-of-service/">Terms of Service</a>.</p>
+        <p class="legal-note">Released under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &mdash; build it, remix it, share it with attribution; no commercial use.</p>
       </div>
     </div>
 
@@ -59,47 +67,79 @@
     </div>
 
     <div class="plain">
-      <h4>What's Included:</h4>
+      <h4>What You Print:</h4>
       <ul>
         <li>2 ASA-Printed Housings</li>
         <li>2 ASA-Printed Retainers with Brass Heat Inserts</li>
-        <li>12 Stainless Steel Button Head Bolts</li>
       </ul>
-      <p>No lights are included in this DIY kit.</p>
+      <p style="font-size:12.5px;color:#555">The DIY kit shipped with these four parts
+      already printed, finished, and fitted with heat-set inserts, plus the twelve stainless
+      bolts &mdash; and no lights. They are the same parts the assembled kit used. Printing
+      them yourself takes about three days of machine time &mdash; roughly 1 day 8 hours for
+      the pair of housings and 2&frac12; hours for the retainers, in ASA.</p>
     </div>
 
     <div class="plain">
-      <h4>Buyer Needs to Acquire:</h4>
+      <h4>What You'll Need to Supply:</h4>
       <ul>
-        <li>In an effort to keep the cost down, these parts are not included in the kit but
-        are easily acquired through Subaru or other retailers.</li>
+        <li>None of these were in the kit either &mdash; they are easily acquired through
+        Subaru or other retailers.</li>
         <li>Fog Light Relay
           <ul><li>Part Number: <a href="https://www.amazon.com/dp/B00IW33M5W"><strong>82501AE03A</strong></a></li></ul>
         </li>
         <li>Fog Light Switch
           <ul><li>Part Number: <a href="https://www.subaruparts.com/oem-parts/subaru-fog-lamp-switch-83001sa000"><strong>83001SA000</strong></a></li></ul>
         </li>
-        <li>Additionally you will need the lights of your choice and to confirm the
-        bracket/wiring will work with this kit.</li>
-        <li>Your own lights (<a href="./diyinstallguide/#diyspecifications"><strong>See Specifications within
+        <li>The lights of your choice &mdash; check them against the compatibility spec
+        below before you commit (<a href="./diyinstallguide/#diyspecifications"><strong>See Specifications within
         the Installation Guide</strong></a>)</li>
         <li>Harness connector
           <ul><li>Info: <a href="https://www.amazon.com/TOMALL-Connector-Headlights-Retrofit-Extension/dp/B07CVH3R75"><strong>9005 Male End</strong></a></li></ul>
         </li>
+        <li>12&times; brass M3 heat-set inserts and 12&times; M3&times;25 stainless button-head
+        bolts &mdash; these came in the kit; the bill of materials names the exact ones used.</li>
       </ul>
-      <img src="../../assets/img/products/bracket_dims.png" alt="Size diagram showing the dimensions of the DIY housing space, mounting hole, and cutout for articulation" style="border-radius:10px;margin-top:6px">
     </div>
 
     <div class="plain">
-      <h4>Price and Purchase:</h4>
+      <h4>Light Compatibility:</h4>
+      <p>This is the part worth checking before you print anything. The housing takes a wide
+      range of small pods, but your light's bracket has to work with the articulation cutout:</p>
       <ul>
-        <li>Price: $150</li>
-        <li>Lead Time: <strong>2-3 weeks</strong> (subject to change as stock builds)</li>
-        <li>Limited Availability: <strong>These light kits are exclusively produced by me.</strong>
-        To maintain quality and precision, I limit each batch to <strong>5 orders</strong>.
-        Once sold out, the buy link will temporarily close until I restock. Please check
-        back soon if it's currently unavailable.</li>
+        <li><strong>Single through-bolt mount</strong> &mdash; the bracket has to attach with
+        one bolt passing through the center hole of the housing, secured with a nut behind it.</li>
+        <li><strong>Maximum bracket size: 64.5&nbsp;mm tall &times; 23&nbsp;mm wide</strong>
+        &mdash; the largest bracket that still rotates through its full vertical travel without
+        its corners catching the edge of the cutout.</li>
+        <li>A bracket that is narrower but still at maximum height can <em>still</em> interfere,
+        because a narrower bracket gets a wider range of rotation.</li>
+        <li><strong>9005 male connector, two wires</strong> &mdash; that is what the factory
+        harness plugs into. Most lights won't come with one, so expect to cut the light's own
+        connector off and solder the 9005 end on; it also has to pass through the wire hole in
+        the housing.</li>
       </ul>
+      <img src="../../assets/img/products/bracket_dims.png" alt="Size diagram showing the dimensions of the DIY housing space, mounting hole, and cutout for articulation" style="border-radius:10px;margin-top:6px">
+      <p style="font-size:12.5px;color:#555">If nothing you like fits inside that envelope,
+      the Fusion 360 source is published now &mdash; reshape the bracket pocket around your
+      light instead of hunting for a light that suits mine.</p>
+    </div>
+
+    <div class="plain">
+      <h4>Make It Yourself:</h4>
+      <ul>
+        <li><strong>Print settings</strong> &mdash; the production Bambu Studio projects, with
+        the exact layer heights, orientation, and painted supports used for the kits.</li>
+        <li><strong>Bill of materials</strong> &mdash; hardware, OEM part numbers, and the
+        connectors and bolts that shipped in the kits.</li>
+        <li><strong>Finishing guide</strong> &mdash; the sand, high-build primer, and satin
+        black process that gave the parts their factory look.</li>
+        <li><strong>CAD source</strong> &mdash; the Fusion 360 file, so you can reshape the
+        housing around a light that doesn't meet the bracket spec above.</li>
+      </ul>
+      <div class="buy-row" style="justify-content:flex-start;margin-top:12px">
+        <a class="btn primary" href="https://www.thingiverse.com/SMITHtRONiC">Download the Files</a>
+        <a class="btn" href="https://github.com/rodu4835/smithtronic/tree/master/sgForesterFogLight">View the Source</a>
+      </div>
     </div>
 
     <div class="carousel">
@@ -109,22 +149,35 @@
 
     <div class="plain faq">
       <h4 style="font-size:14px">FAQs:</h4>
-      <h4>How long until I receive my set?</h4>
-      <p>Currently, these kits are made to order, so you can expect shipment confirmation
-      within <strong>2-3 weeks</strong>, hopefully sooner. The production timeline may
-      improve as I scale up, but for now, the <strong>printing process alone takes about
-      three days per set</strong>. I appreciate your patience and dedication to quality
-      craftsmanship!</p>
+      <h4>Are the kits still for sale?</h4>
+      <p>No. SMITHtRONiC no longer sells these kits &mdash; the whole design is open source
+      instead, so you can print a set yourself or have someone print it for you. Everything
+      that shipped in the box, apart from the off-the-shelf hardware, is in the files.</p>
+      <h4>How long does a set take to print?</h4>
+      <p>About <strong>three days of machine time per set</strong> &mdash; roughly 1 day
+      8 hours for the pair of housings (they print at 0.08&nbsp;mm, tilted 45&deg;) and about
+      2&frac12; hours for the pair of retainers. That was the bottleneck when these were made
+      to order, and it is the same now.</p>
+      <h4>How is this different from the assembled kit now?</h4>
+      <p>For the printed parts, it isn't &mdash; they are the same files. The
+      <a href="../auxlightkit/"><strong>assembled kit</strong></a> shipped with amber LED pods
+      already wired and mounted; this one left the light choice to you. Read this page if you
+      are choosing your own light, and that one if you'd rather see which lights I used and
+      copy them.</p>
       <h4>What lights will fit?</h4>
-      <p>Reference the size diagram showing the dimensions of the housing space, mounting
-      hole, and cutout for articulation provided above and in the installation guide.
-      Check these measurements to ensure your preferred bracket fits.</p>
+      <p>Anything that mounts with a single bolt through its bracket and stays within
+      <strong>64.5&nbsp;mm tall by 23&nbsp;mm wide</strong> at that bracket. Measure yours
+      against the size diagram above &mdash; and keep in mind that a narrow bracket at full
+      height can still catch the cutout as it rotates. The
+      <a href="./diyinstallguide/#diyspecifications"><strong>specifications in the installation
+      guide</strong></a> have the full detail.</p>
       <h4>Will you do custom design work to make sure the light I choose will fit?</h4>
-      <p>If you have a specific light in mind and want to ensure a perfect fit, I offer a
-      custom design service. You can send me your light and, for an additional charge
-      (based on design time), I can create a housing tailored to your light's
-      specifications. <a href="../../contact/"><strong>Contact me</strong></a> for more
-      details or to discuss your custom project!</p>
+      <p>I used to offer that as a paid service, and I don't anymore. Instead, the Fusion 360
+      source file is published alongside the models, so you can reshape the housing around your
+      own light yourself &mdash; or hand the file to someone who models. That covers what the
+      service did, without waiting on me.</p>
+      <p>If you build something interesting with it,
+      <a href="../../contact/"><strong>I'd like to see it</strong></a>.</p>
     </div>
   </div>
 </main>
