@@ -14,6 +14,7 @@ Nameservers: `ns1.bluehost.com`, `ns2.bluehost.com` — so DNS is edited **at Bl
 | A | `@` | `31.43.160.6` | website → Framer |
 | A | `@` | `31.43.161.6` | website → Framer |
 | CNAME | `www` | `sites.framer.app` | website → Framer |
+| CNAME | `google3a3f442237451e36` | `google.com` | **Google Workspace verification** |
 | MX | `@` | `smtp.google.com` (priority 1) | **your email (Google Workspace)** |
 | TXT | `@` | `google-site-verification=aVee275JGITBsm_Z3Vaa4NoLZKS335Ur_2kaXwtnxlE` | proves the domain to Google |
 
@@ -40,10 +41,11 @@ If you ever need to undo the cutover, restore the three website rows above.
 
 All four A records are needed — they are GitHub's four redundant servers.
 
-### ⚠️ Do not touch these two rows
+### ⚠️ Do not touch these three rows
 
 - **MX `@` → smtp.google.com** — this is ron@smithtronic.com. Deleting it stops your email.
 - **TXT `@` → google-site-verification=…** — Google uses it to confirm you own the domain.
+- **CNAME `google3a3f442237451e36` → google.com** — also Google Workspace verification.
 
 Changing the A/CNAME rows above does **not** affect email. They are independent.
 
