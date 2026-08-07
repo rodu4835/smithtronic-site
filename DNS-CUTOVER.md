@@ -1,76 +1,88 @@
 # DNS cutover — moving smithtronic.com from Framer to GitHub Pages
 
-Do these steps **in order**. The live Framer site keeps serving the domain until
-step 3, and nothing goes down at any point.
+Captured live on 2026-08-06, so the values below are **your actual records**, not
+generic advice. Nothing here touches email.
 
 ---
 
-## Before you start
+## Your DNS today (rollback reference)
 
-- Preview the finished replica at **https://rodu4835.github.io/smithtronic-site/**
-  and confirm you're happy with it. Nothing below is reversible-free, but all of
-  it is reversible: putting the old Framer records back restores the old site.
-- Have your Bluehost login handy (that's where the domain is registered).
+Nameservers: `ns1.bluehost.com`, `ns2.bluehost.com` — so DNS is edited **at Bluehost**.
 
----
-
-## Step 1 — Tell GitHub the domain is ours
-
-In this repo: **Settings → Pages → Custom domain** → enter `www.smithtronic.com`
-→ Save. GitHub writes a `CNAME` file into the repo (that's expected).
-
-It will warn that DNS isn't configured yet. That's fine — step 2 fixes it.
-
-## Step 2 — Change the web records at Bluehost
-
-Log in to Bluehost → **Domains → smithtronic.com → DNS / Zone Editor**.
-
-**Remove** the existing records that point the site at Framer:
-- the `A` record for `@` (host `smithtronic.com`) pointing at a Framer IP
-- the `CNAME` for `www` pointing at something like `sites.framer.app`
-
-**Add** these instead:
-
-| Type | Host / Name | Points to | TTL |
+| Type | Host | Current value | What it does |
 |---|---|---|---|
-| A | `@` | `185.199.108.153` | default |
-| A | `@` | `185.199.109.153` | default |
-| A | `@` | `185.199.110.153` | default |
-| A | `@` | `185.199.111.153` | default |
-| CNAME | `www` | `rodu4835.github.io.` | default |
+| A | `@` | `31.43.160.6` | website → Framer |
+| A | `@` | `31.43.161.6` | website → Framer |
+| CNAME | `www` | `sites.framer.app` | website → Framer |
+| MX | `@` | `smtp.google.com` (priority 1) | **your email (Google Workspace)** |
+| TXT | `@` | `google-site-verification=aVee275JGITBsm_Z3Vaa4NoLZKS335Ur_2kaXwtnxlE` | proves the domain to Google |
 
-All four A records are required — they're GitHub's redundant servers.
-
-### ⚠️ Leave these records ALONE
-
-Do **not** touch anything of type **MX**, or any `TXT` record containing `spf`,
-`dkim`, or `dmarc`. Those run **email for ron@smithtronic.com**. Changing them
-breaks your email; changing the A/CNAME records above does not.
-
-## Step 3 — Wait, then verify
-
-DNS usually propagates in 15–60 minutes (occasionally a few hours).
-
-1. Visit **http://www.smithtronic.com** — you should see the new site.
-2. Back in **Settings → Pages**, wait for the green "DNS check successful",
-   then tick **Enforce HTTPS** (the padlock certificate is issued automatically
-   and free; it can take up to an hour to become available).
-3. Check that **https://www.smithtronic.com/shop/auxlightkit/installguide/**
-   loads — that's the URL printed on the kit QR cards.
-4. Send yourself a test email at ron@smithtronic.com to confirm mail is unaffected.
-
-## Step 4 — Cancel Framer
-
-Only after steps 1–3 check out. From then on your only recurring cost is the
-domain renewal at Bluehost.
+If you ever need to undo the cutover, restore the three website rows above.
 
 ---
 
-## If something looks wrong
+## The change
 
-- **Site doesn't load after an hour:** re-check the four A records for typos, and
-  make sure no leftover Framer A/CNAME record remains.
-- **"Domain does not resolve" in GitHub Pages settings:** DNS hasn't propagated
-  yet; wait and re-check.
-- **Need to roll back:** restore the original Framer A/CNAME records at Bluehost
-  and (if still subscribed) the Framer site serves the domain again.
+**Delete** these three (they point at Framer):
+- A `@` → `31.43.160.6`
+- A `@` → `31.43.161.6`
+- CNAME `www` → `sites.framer.app`
+
+**Add** these five (they point at GitHub):
+
+| Type | Host | Value |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `rodu4835.github.io` |
+
+All four A records are needed — they are GitHub's four redundant servers.
+
+### ⚠️ Do not touch these two rows
+
+- **MX `@` → smtp.google.com** — this is ron@smithtronic.com. Deleting it stops your email.
+- **TXT `@` → google-site-verification=…** — Google uses it to confirm you own the domain.
+
+Changing the A/CNAME rows above does **not** affect email. They are independent.
+
+---
+
+## Order of operations (no downtime)
+
+1. **Open** the Bluehost DNS editor and get to the record list — don't save anything yet.
+2. **Tell me you're there.** I set the custom domain on the GitHub side (5 seconds).
+   GitHub is then ready to serve smithtronic.com, while Framer is still serving it —
+   nothing has changed for visitors yet.
+3. **Make the record changes above and save.** This is the moment the switch happens.
+4. **Wait 15–60 minutes** for DNS to propagate.
+5. **Tell me it's saved** — I'll verify the domain resolves to GitHub, confirm the
+   site loads, turn on HTTPS, and re-check that your email records are intact.
+6. **Then cancel Framer.** Not before step 5 confirms everything is live.
+
+---
+
+## What to verify before cancelling Framer
+
+- https://www.smithtronic.com loads the new site
+- https://smithtronic.com (no www) redirects to it
+- https://www.smithtronic.com/shop/auxlightkit/installguide/ loads —
+  **this is the URL printed on the QR cards shipped with every kit**
+- The padlock (HTTPS) shows, with no browser warning
+- Send yourself a test email at ron@smithtronic.com and confirm it arrives
+
+---
+
+## After the cutover
+
+Your only recurring cost is the domain renewal at Bluehost. Hosting is free and
+unlimited for a site this size. To change the site, edit the HTML in this repo and
+push — it redeploys in about a minute.
+
+### Optional, unrelated to this move
+
+Your domain has **no SPF record**. That's a pre-existing gap, not something this
+change causes, but adding one helps your outgoing mail avoid spam folders. If you
+want it later, it's a single TXT record on `@`:
+`v=spf1 include:_spf.google.com ~all`
