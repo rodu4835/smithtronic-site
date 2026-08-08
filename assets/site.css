@@ -236,6 +236,7 @@ main { flex: 1; }
 .list-card .thumb img { border-radius: 8px; width: 100%; max-height: 190px; object-fit: cover; }
 .list-card h3 { color: var(--cyan); font-size: 15px; font-weight: 600; margin-bottom: 6px; }
 .list-card p { color: #e8e8e8; font-size: 12.5px; line-height: 1.55; margin: 0; }
+.list-card .oss-tag { color: var(--cyan); font-weight: 600; font-size: 12px; margin-top: 8px; letter-spacing: 0.3px; }
 
 /* ---------- reviews ---------- */
 .reviews { width: min(880px, 92%); margin: 22px auto 40px; }
