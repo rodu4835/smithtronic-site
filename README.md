@@ -2,6 +2,21 @@
 
 The SMITHTRONIC website — plain static HTML, hosted free on GitHub Pages.
 
+## License — read this before reusing anything
+
+This repository is public because GitHub Pages requires it, **not** because its
+contents are free to reuse. All site content — page copy, photos, the
+SMITHTRONIC name and logo, and the site design — is
+**© 2024–2026 Smithtronic, all rights reserved**, and is not licensed for
+republication or rehosting. Viewing and forking on GitHub (per GitHub's Terms
+of Service) does not grant any right to reproduce this site elsewhere.
+
+The **open-source hardware designs** are a different story on purpose: the fog
+light kit and vented headlight caps live in the
+[`smithtronic`](https://github.com/rodu4835/smithtronic) repo under
+**CC BY-NC-SA 4.0** — those you're invited to print, remix, and share with
+attribution, non-commercially.
+
 Rebuilt from the original Framer site in August 2026 so the domain could stay
 while the Framer subscription went away. No build step, no framework, no
 dependencies: what's in this repo is exactly what the browser gets.
