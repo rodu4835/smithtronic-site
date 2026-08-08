@@ -36,21 +36,22 @@
       <p>My 2017 Zero FXS will tell you almost everything about itself &mdash; battery
       management data, motor controller state, a complete error log &mdash; but the
       conversation happens over a service-port console that normally only dealer tools
-      speak. When I wanted to know how my battery was <em>actually</em> aging, I decided
-      the bike and I should talk directly. OpenMBB is the result: a free, open-source
-      desktop app that connects to the bike's MBB (Main Bike Board) console, reads
-      everything it will share, backs it up, and makes sense of it offline.</p>
+      speak. The official Bluetooth app kept letting me down when what I wanted to know
+      was how my battery was <em>actually</em> aging, so I decided the bike and I should
+      talk directly. OpenMBB is the result: a free, open-source desktop app that
+      connects to the bike's MBB (Main Bike Board) console, reads everything it will
+      share, backs it up, and makes sense of it offline.</p>
 
       <h3>What It Does:</h3>
       <ul>
         <li><strong>Reads the bike's own diagnostics</strong> &mdash; identity, BMS and
         battery state, motor controller, lifetime stats, and the full error log &mdash;
         and saves clean backups of all of it.</li>
-        <li><strong>Battery health analysis</strong> &mdash; capacity and cell-imbalance
-        trends built from the bike's own data, so "how's the pack doing?" gets a real
-        answer instead of a guess.</li>
-        <li><strong>Ride and gearing analysis</strong> &mdash; optional helpers for
-        digging into ride logs and sprocket math.</li>
+        <li><strong>Battery health analysis</strong> &mdash; cell voltages and balance,
+        pack isolation, charge cycles, and capacity trends built from the bike's own
+        data, so "how's the pack doing?" gets a real answer instead of a guess.</li>
+        <li><strong>Ride and gearing analysis</strong> &mdash; your ride history decoded
+        from the bike's own event log, plus charts and sprocket math helpers.</li>
         <li><strong>A built-in simulator</strong> &mdash; the entire app works with no
         bike connected, so you can explore every screen before you ever plug in.</li>
         <li><strong>Windows and Linux builds</strong> &mdash; a Windows installer,
@@ -58,12 +59,20 @@
         Python runs. Continuous integration builds and verifies every release.</li>
       </ul>
 
+      <div class="carousel">
+        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_welcome.jpg" alt="OpenMBB welcome screen — a read-first diagnostics console for Gen2 Zero motorcycles">
+        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_health.jpg" alt="OpenMBB battery health dashboard showing pack voltage, cell balance, charge cycles, and lifetime efficiency">
+        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_charts.jpg" alt="OpenMBB charts tab plotting pack voltage against distance">
+        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_writes.jpg" alt="OpenMBB writes tab — whitelisted settings with risk labels behind a master unlock">
+      </div>
+
       <h3>Safe by Design:</h3>
       <p>Tools that can write to a vehicle's brain deserve suspicion, so OpenMBB is
       <strong>read-first on purpose</strong>. Writing is off by default and limited to a
-      whitelist; the Writes tab doubles as a reference of what's adjustable &mdash; each
-      setting shown with its effect and its risk &mdash; and any change is gated behind
-      console login, a master unlock, and a per-write confirmation. It's an unofficial
+      whitelist; the Writes tab doubles as a reference of what's adjustable
+      (sprocket/speedo trim, custom-mode speed, torque, and regen) &mdash; each setting
+      shown with its effect and its risk &mdash; and any change is gated behind console
+      login, a master unlock, and a per-write confirmation. It's an unofficial
       hobby tool, not affiliated with Zero Motorcycles, verified on my own 2017 FXS;
       other Gen2-era Zeros (roughly 2013&ndash;2019 S, SR, DS, DSR, FX, and the FXE)
       share the same console but are untested &mdash; so reads are the point, and writes
