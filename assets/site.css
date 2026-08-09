@@ -24,7 +24,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
-img { max-width: 100%; }
+/* height:auto is not optional here. An <img> carrying width/height attributes
+   (which prevent layout shift while loading) keeps its height attribute when CSS
+   scales the width down, and the image stretches. */
+img { max-width: 100%; height: auto; }
 main { flex: 1; }
 
 /* ---------- header ---------- */
