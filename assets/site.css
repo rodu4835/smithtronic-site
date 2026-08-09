@@ -148,14 +148,14 @@ main { flex: 1; }
    a tall column. Needs img.about-portrait to outrank `.prose img` above. */
 .prose img.about-portrait {
   float: left;
-  width: 168px;
-  margin: 3px 24px 12px 0;
+  width: 190px;
+  margin: 3px 26px 14px 0;
   border-radius: var(--radius-frame);
 }
 /* Headings never sit beside the float, however the copy above them reflows. */
 .prose .about-portrait ~ h2 { clear: left; }
 @media (max-width: 620px) {
-  .prose img.about-portrait { float: none; width: 148px; margin: 0 0 18px; }
+  .prose img.about-portrait { float: none; width: 190px; margin: 0 0 18px; }
 }
 .prose a { color: var(--cyan-deep); }
 .prose blockquote {
