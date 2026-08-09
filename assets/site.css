@@ -215,6 +215,9 @@ main { flex: 1; }
 .oss-banner p { color: #e8e8e8; font-size: 12.5px; margin: 0; line-height: 1.5; }
 .oss-banner strong { color: var(--cyan); }
 .oss-banner .btn-row { margin: 0; }
+/* The banner normally has content under it; when it closes a page (Reviews) it
+   would otherwise sit flush against the footer. */
+main > .oss-banner:last-child { margin-bottom: 54px; }
 
 /* ---------- horizontal list cards (projects index, category pages) ---------- */
 .list-cards {
