@@ -27,19 +27,32 @@ Every page is a standalone `.html` file. Open it, change the text, commit, push 
 GitHub Pages redeploys within a minute or two.
 
 - `index.html` — home
-- `shop/` — product pages (`auxlightkit/`, `diylightkit/`, `headlightcaps/`) and
-  the install guides beneath them
+- `software/` — section index plus one folder per tool (`openmbb/`)
+- `shop/` — the 3D-printed designs (`auxlightkit/`, `diylightkit/`, `headlightcaps/`)
+  and the install guides beneath them
 - `projects/` — index, the four category pages, and one folder per project post
-- `reviews/`, `clients/`, `contact/`, `privacy-policy/`, `terms-of-service/`
+- `about/`, `reviews/`, `contact/`, `privacy-policy/`, `terms-of-service/`
+- `clients/` and `projects/openmbb-…/` — meta-refresh redirect stubs left behind
+  by moves; `noindex` + canonical, not real pages
 - `assets/site.css` — the entire design system (colors, cards, buttons, layout)
 - `assets/img/` — images, grouped by section
 - `assets/fonts/` — Audiowide, Inter, Fragment Mono, self-hosted (no external calls)
+- `tools/cachebust.py` — stamps stylesheet URLs with a content hash
 
 ### House rules
 
-- **URL paths are load-bearing.** The install guide paths
-  (`/shop/auxlightkit/installguide/`, `/shop/diylightkit/diyinstallguide/`) are
-  printed as QR codes on cards shipped with every kit. Never rename those folders.
+- **Run `python tools/cachebust.py` after any `assets/*.css` edit, before you
+  commit.** Pages serves CSS with `max-age=600`, so shipping new markup against
+  an unchanged stylesheet URL means anyone with a warm cache gets the new HTML
+  rendered by the old CSS for up to ten minutes. This happened once and the home
+  page looked broken. The hash in `site.css?v=…` makes the pair atomic.
+- **The install guide paths are load-bearing.**
+  `/shop/auxlightkit/installguide/` and `/shop/diylightkit/diyinstallguide/` were
+  printed as QR codes on cards shipped with kits. New cards aren't being printed,
+  but the ones already out there don't expire. Never rename those folders.
+- **Moving a page means leaving a redirect stub** at the old path — meta-refresh,
+  `<meta name="robots" content="noindex">`, and a `<link rel="canonical">` to the
+  new URL. External links (Thingiverse, GitHub, forums) point at the old paths.
 - Internal links end with a trailing slash (`../reviews/`, not `../reviews`).
 - Colors live in `:root` at the top of `site.css` — change them there, not per page.
 
