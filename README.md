@@ -28,12 +28,12 @@ GitHub Pages redeploys within a minute or two.
 
 - `index.html` — home
 - `software/` — section index plus one folder per tool (`openmbb/`)
-- `shop/` — the 3D-printed designs (`auxlightkit/`, `diylightkit/`, `headlightcaps/`)
-  and the install guides beneath them
+- `designs/` — the 3D-printed parts: `foglightkit/` (with `installguide/` and
+  `diyinstallguide/` beneath it), `headlightcaps/`, `glovebox/`
 - `projects/` — index, the four category pages, and one folder per project post
 - `about/`, `reviews/`, `contact/`, `privacy-policy/`, `terms-of-service/`
-- `clients/` and `projects/openmbb-…/` — meta-refresh redirect stubs left behind
-  by moves; `noindex` + canonical, not real pages
+- `shop/`, `clients/`, `projects/openmbb-…/` — meta-refresh redirect stubs left
+  behind by renames; `noindex` + canonical, not real pages
 - `assets/site.css` — the entire design system (colors, cards, buttons, layout)
 - `assets/img/` — images, grouped by section
 - `assets/fonts/` — Audiowide, Inter, Fragment Mono, self-hosted (no external calls)
@@ -46,13 +46,19 @@ GitHub Pages redeploys within a minute or two.
   an unchanged stylesheet URL means anyone with a warm cache gets the new HTML
   rendered by the old CSS for up to ten minutes. This happened once and the home
   page looked broken. The hash in `site.css?v=…` makes the pair atomic.
-- **The install guide paths are load-bearing.**
-  `/shop/auxlightkit/installguide/` and `/shop/diylightkit/diyinstallguide/` were
-  printed as QR codes on cards shipped with kits. New cards aren't being printed,
-  but the ones already out there don't expire. Never rename those folders.
+- **Two install guide URLs are load-bearing in the physical world.**
+  `/shop/auxlightkit/installguide/` and `/shop/diylightkit/diyinstallguide/`
+  were printed as QR codes on cards shipped with kits. Those cards can't be
+  reissued. The guides now live under `/designs/foglightkit/`, and the old paths
+  are redirect stubs — **keep the stubs**, and never delete `shop/`.
 - **Moving a page means leaving a redirect stub** at the old path — meta-refresh,
   `<meta name="robots" content="noindex">`, and a `<link rel="canonical">` to the
   new URL. External links (Thingiverse, GitHub, forums) point at the old paths.
+- **No `<form>` without a real endpoint.** The contact and review forms used to
+  POST to a `mailto:` URL, which browsers handle inconsistently and often deliver
+  empty. Use a plain `mailto:` link with a prefilled `subject`/`body` instead.
+- Section indexes use `.list-cards` — one full-width row per item. The old
+  `.grid`/`.card` layout is gone; don't reintroduce it for a new section.
 - Internal links end with a trailing slash (`../reviews/`, not `../reviews`).
 - Colors live in `:root` at the top of `site.css` — change them there, not per page.
 
