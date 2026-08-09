@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software — Smithtronic</title>
+<meta name="description" content="Open-source software: diagnostics tools for hardware that doesn't document itself. Free, source available, Windows and Linux.">
+<link rel="icon" href="../assets/img/favicon.png">
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="../"><img src="../assets/img/logo.svg" alt="SMITHtRONiC"></a>
+  <nav>
+    <a href="./" class="active">Software</a>
+    <a href="../shop/">Designs</a>
+    <a href="../projects/">Projects</a>
+    <a href="../about/">About</a>
+    <a href="../contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1 class="page-title">Software</h1>
+    <p class="page-sub">Tools for hardware that doesn't document itself. Everything here is free, source
+    available on <a href="https://github.com/rodu4835">GitHub</a>, and built for a device I actually own.</p>
+  </div>
+  <hr class="rule">
+
+  <div class="list-cards">
+
+    <a class="list-card" href="./openmbb/">
+      <div class="thumb"><img src="../assets/img/projects/motorcycles_openmbb.png" alt="OpenMBB reading a Zero motorcycle's diagnostics console"></div>
+      <div>
+        <h3>OpenMBB — Gen2 Zero motorcycle diagnostics</h3>
+        <p>A read-first desktop app for the MBB service console: battery management data, motor-controller
+        state, statistics, and the full error log. Writes are whitelist-only, off by default, and gated behind
+        a login, a master unlock, and a per-write confirmation — the tool can brick a motorcycle, so it is
+        built to make that hard. Ships with a simulator so the whole application can be explored with no bike
+        attached, and CI builds and verifies binaries for Windows and Linux on every tagged release.</p>
+        <p class="oss-tag">Free &middot; MIT &middot; Windows &amp; Linux &middot; Python</p>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="oss-banner">
+    <p><strong>More on the way.</strong> This section grows as I publish. The current work is around agents,
+    evaluation harnesses, and the Model Context Protocol — the same reverse-engineer-it-then-document-it habit,
+    pointed at a newer kind of undocumented system.</p>
+    <div class="btn-row"><a class="btn" href="https://github.com/rodu4835">Watch on GitHub</a></div>
+  </div>
+
+  <div class="section-label" style="margin-top:40px;">
+    <h2>How these get built</h2>
+    <p>Every project here talks to something with no public specification, so each one carries an explicit
+    record of what has been <strong>confirmed on real hardware</strong> versus what is expected but untested —
+    stated on the page, not buried in a commit. Thresholds come from measurement. Where I don't know, it says
+    so. <a href="../about/">More about that</a>.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="left">
+    <img src="../assets/img/s-icon.png" alt="">
+    <a href="../privacy-policy/">Privacy Policy</a>
+    <a href="../terms-of-service/">Terms of Service</a>
+  </div>
+  <div class="byline">Designed and built by <a href="https://github.com/rodu4835" rel="me">Ron Durham</a></div>
+  <div><a href="https://en.wikipedia.org/wiki/Copyright">©</a> 2024–2026 Smithtronic. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>

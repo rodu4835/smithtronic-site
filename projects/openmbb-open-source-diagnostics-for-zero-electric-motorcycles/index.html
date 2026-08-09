@@ -3,112 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenMBB: Open-Source Diagnostics for Zero Electric Motorcycles - Smithtronic</title>
-<meta name="description" content="A free, open-source desktop tool that reads a Gen2 Zero electric motorcycle's own diagnostics — battery health, error logs, and ride analysis over the MBB service port.">
+<title>Moved — OpenMBB</title>
+<link rel="canonical" href="https://www.smithtronic.com/software/openmbb/">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=../../software/openmbb/">
 <link rel="icon" href="../../assets/img/favicon.png">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
-
-<header class="site-header">
-  <a class="logo" href="../../"><img src="../../assets/img/logo.svg" alt="SMITHtRONiC"></a>
-  <nav>
-    <a href="../../shop/">Designs</a>
-    <a href="../../reviews/">Reviews</a>
-    <a href="../" class="active">Projects</a>
-    <a href="../../clients/">Clients</a>
-    <a href="../../contact/">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="page-head">
-    <h1 class="page-title">OpenMBB: Open-Source Diagnostics for Zero Electric Motorcycles</h1>
-    <p class="page-sub">A free desktop app that reads a Gen2 Zero's own diagnostics over the service port — battery health, error logs, and ride analysis, with a built-in simulator.</p>
-  </div>
-
-  <hr class="rule">
-
-  <div class="container">
-    <div class="prose">
-      <h3>Project Overview:</h3>
-      <p>My 2017 Zero FXS will tell you almost everything about itself &mdash; battery
-      management data, motor controller state, a complete error log &mdash; but the
-      conversation happens over a service-port console that normally only dealer tools
-      speak. The official Bluetooth app kept letting me down when what I wanted to know
-      was how my battery was <em>actually</em> aging, so I decided the bike and I should
-      talk directly. OpenMBB is the result: a free, open-source desktop app that
-      connects to the bike's MBB (Main Bike Board) console, reads everything it will
-      share, backs it up, and makes sense of it offline.</p>
-
-      <h3>What It Does:</h3>
-      <ul>
-        <li><strong>Reads the bike's own diagnostics</strong> &mdash; identity, BMS and
-        battery state, motor controller, lifetime stats, and the full error log &mdash;
-        and saves clean backups of all of it.</li>
-        <li><strong>Battery health analysis</strong> &mdash; cell voltages and balance,
-        pack isolation, charge cycles, and capacity trends built from the bike's own
-        data, so "how's the pack doing?" gets a real answer instead of a guess.</li>
-        <li><strong>Ride and gearing analysis</strong> &mdash; your ride history decoded
-        from the bike's own event log, plus charts and sprocket math helpers.</li>
-        <li><strong>A built-in simulator</strong> &mdash; the entire app works with no
-        bike connected, so you can explore every screen before you ever plug in.</li>
-        <li><strong>Windows and Linux builds</strong> &mdash; a Windows installer,
-        portable single-file binaries for both platforms, and source for anywhere
-        Python runs. Continuous integration builds and verifies every release.</li>
-      </ul>
-
-      <div class="carousel">
-        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_welcome.jpg" alt="OpenMBB welcome screen — a read-first diagnostics console for Gen2 Zero motorcycles">
-        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_health.jpg" alt="OpenMBB battery health dashboard showing pack voltage, cell balance, charge cycles, and lifetime efficiency">
-        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_charts.jpg" alt="OpenMBB charts tab plotting pack voltage against distance">
-        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/app_writes.jpg" alt="OpenMBB writes tab — whitelisted settings with risk labels behind a master unlock">
-      </div>
-
-      <h3>Safe by Design:</h3>
-      <p>Tools that can write to a vehicle's brain deserve suspicion, so OpenMBB is
-      <strong>read-first on purpose</strong>. Writing is off by default and limited to a
-      whitelist; the Writes tab doubles as a reference of what's adjustable
-      (sprocket/speedo trim, custom-mode speed, torque, and regen) &mdash; each setting
-      shown with its effect and its risk &mdash; and any change is gated behind console
-      login, a master unlock, and a per-write confirmation. It's an unofficial
-      hobby tool, not affiliated with Zero Motorcycles, verified on my own 2017 FXS;
-      other Gen2-era Zeros (roughly 2013&ndash;2019 S, SR, DS, DSR, FX, and the FXE)
-      share the same console but are untested &mdash; so reads are the point, and writes
-      are at your own risk.</p>
-
-      <h3>The Hardware Side:</h3>
-      <p>The whole interface is one inexpensive FTDI TTL-serial cable wired to the
-      bike's OBD-II port &mdash; three pins and a ground. The app ships with the full
-      wiring diagram, pinout, and the safety notes that matter (3.3&nbsp;V logic only,
-      never back-power the bus).</p>
-
-      <div class="carousel">
-        <img src="../../assets/img/posts/openmbb-open-source-diagnostics-for-zero-electric-motorcycles/wiring.svg" alt="OpenMBB diagnostic cable wiring diagram: FTDI TTL-232R-3V3 to Zero OBD-II port">
-      </div>
-
-      <h3>Get It:</h3>
-      <p>OpenMBB is free and open source under the <strong>MIT license</strong>. The
-      code, documentation, and ready-to-run downloads for Windows and Linux are all on
-      GitHub.</p>
-      <div class="buy-row" style="justify-content:flex-start;margin-top:12px">
-        <a class="btn primary" href="https://github.com/rodu4835/openmbb/releases">Download (Releases)</a>
-        <a class="btn" href="https://github.com/rodu4835/openmbb">View the Source</a>
-      </div>
-    </div>
-  </div>
+<main class="prose" style="text-align:center;margin-top:80px;">
+  <p>OpenMBB has moved to <a href="../../software/openmbb/">smithtronic.com/software/openmbb</a>.</p>
+  <p>Redirecting you now&hellip;</p>
 </main>
-
-<footer class="site-footer">
-  <div class="left">
-    <img src="../../assets/img/s-icon.png" alt="">
-    <a href="../../privacy-policy/">Privacy Policy</a>
-    <a href="../../terms-of-service/">Terms of Service</a>
-  </div>
-  <div class="byline">Designed and built by <a href="https://github.com/rodu4835" rel="me">Ron Durham</a></div>
-  <div><a href="https://en.wikipedia.org/wiki/Copyright">©</a> 2024–2026 Smithtronic. All Rights Reserved.</div>
-</footer>
-
 </body>
 </html>

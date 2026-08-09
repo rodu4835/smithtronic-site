@@ -47,17 +47,32 @@ main { flex: 1; }
 .site-header nav a:hover,
 .site-header nav a.active { color: var(--cyan); }
 
-/* ---------- home hero ---------- */
-.hero {
-  min-height: calc(100vh - 150px);
+/* ---------- home hero ----------
+   Sized to leave the first "Start here" card visible above the fold on a
+   laptop — the old full-viewport splash pushed all content below it. */
+.home-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px 8px;
 }
-.hero .s-mark { width: 195px; margin-bottom: 34px; }
+.home-hero .s-mark { width: 118px; margin-bottom: 22px; }
+.home-hero .display { line-height: 1.32; max-width: 15ch; }
+.home-hero .tagline { max-width: 620px; line-height: 1.6; }
+.home-hero .btn-row { margin-top: 26px; }
+@media (min-width: 900px) {
+  .home-hero .display { max-width: none; }
+}
+
+/* ---------- home: who makes this ---------- */
+.home-about { background: var(--ink); margin-top: 26px; padding: 40px 20px 44px; }
+.home-about-inner { width: min(760px, 92%); margin: 0 auto; text-align: center; }
+.home-about h2 { color: var(--cyan); font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+.home-about p { color: #e8e8e8; font-size: 14px; line-height: 1.65; }
+.home-about strong { color: #fff; }
+.home-about em { color: #fff; font-style: italic; }
+.home-about .btn-row { margin-top: 24px; }
 .display {
   font-family: Audiowide, Inter, sans-serif;
   font-weight: 400;
@@ -297,6 +312,7 @@ main { flex: 1; }
   flex-wrap: wrap;
 }
 .site-footer .left { display: flex; align-items: center; gap: 18px; }
+.site-footer .byline { color: #333; }
 .site-footer img { height: 24px; display: block; }
 .site-footer a { color: #333; text-decoration: none; }
 .site-footer a:hover { color: var(--cyan); }

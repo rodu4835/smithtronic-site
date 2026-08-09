@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smithtronic</title>
-<meta name="description" content="Precision fabrication meets technology. Discover custom creations blending 3D printing, electronics, and innovation.">
+<title>Smithtronic — open-source hardware and software</title>
+<meta name="description" content="Open-source parts and software, documented well enough to build from — 3D-printed automotive parts, electric-motorcycle diagnostics, and write-ups of everything else I build.">
 <link rel="icon" href="./assets/img/favicon.png">
 <link rel="stylesheet" href="./assets/fonts.css">
 <link rel="stylesheet" href="./assets/site.css">
@@ -14,23 +14,84 @@
 <header class="site-header">
   <a class="logo" href="./"><img src="./assets/img/logo.svg" alt="SMITHtRONiC"></a>
   <nav>
+    <a href="./software/">Software</a>
     <a href="./shop/">Designs</a>
-    <a href="./reviews/">Reviews</a>
     <a href="./projects/">Projects</a>
-    <a href="./clients/">Clients</a>
+    <a href="./about/">About</a>
     <a href="./contact/">Contact</a>
   </nav>
 </header>
 
-<main class="hero">
-  <img class="s-mark" src="./assets/img/s-icon.png" alt="">
-  <h1 class="display">Welcome to <span class="accent">SMITHtRONiC</span></h1>
-  <p class="tagline">Crafting solutions through mechanical precision and electronic creativity.</p>
-  <div class="btn-row">
-    <a class="btn" href="./projects/">Explore Projects</a>
-    <a class="btn primary" href="./shop/">Browse Designs</a>
-    <a class="btn" href="./contact/">Get in Touch</a>
+<main>
+
+  <section class="home-hero">
+    <img class="s-mark" src="./assets/img/s-icon.png" alt="">
+    <h1 class="display">Open-source parts and software,<br><span class="accent">documented well enough to build from.</span></h1>
+    <p class="tagline">Diagnostics tools for electric motorcycles, 3D-printed parts for cars that no longer have a parts catalog,
+    and honest write-ups of everything else I take apart. Models, wiring, print settings, and source — all free.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="./software/">Software</a>
+      <a class="btn" href="./shop/">Printable designs</a>
+      <a class="btn" href="./projects/">Project archive</a>
+    </div>
+  </section>
+
+  <div class="section-label">
+    <h2>Start here</h2>
+    <p>The three things most people come looking for.</p>
   </div>
+
+  <div class="list-cards">
+
+    <a class="list-card" href="./software/openmbb/">
+      <div class="thumb"><img src="./assets/img/projects/motorcycles_openmbb.png" alt="OpenMBB reading a Zero motorcycle's diagnostics console"></div>
+      <div>
+        <h3>OpenMBB — Zero motorcycle diagnostics</h3>
+        <p>Your Gen2 Zero will tell you almost everything about itself over its service port, but only dealer tools
+        normally speak that language. OpenMBB reads it: battery health, motor-controller state, error logs, ride
+        history. Reads are unrestricted; writes are whitelist-only and triple-gated, because the tool can brick a
+        motorcycle. Ships with a simulator so you can try the whole thing with no bike attached.</p>
+        <p class="oss-tag">Free &middot; Open source &middot; Windows &amp; Linux</p>
+      </div>
+    </a>
+
+    <a class="list-card" href="./shop/">
+      <div class="thumb"><img src="./assets/img/products/aux_main.png" alt="SMITHtRONiC amber auxiliary light kit installed"></div>
+      <div>
+        <h3>Printable parts for the SG Forester</h3>
+        <p>Amber auxiliary light kits, vented headlight caps, a glove-box shelf. Printed in ASA, fitted to a real car,
+        and published with the CAD source, bill of materials, print settings, wiring diagrams, and step-by-step
+        install guides — everything needed to build one without asking me a single question.</p>
+        <p class="oss-tag">Free &middot; Open source &middot; Thingiverse &amp; GitHub</p>
+      </div>
+    </a>
+
+    <a class="list-card" href="./projects/">
+      <div class="thumb"><img src="./assets/img/projects/residential_cover.webp" alt="Restored 1957 travel trailer"></div>
+      <div>
+        <h3>The project archive</h3>
+        <p>Everything else: a 1957 trailer restoration, supermoto conversions, an aluminium fishing boat brought back
+        from the dead, surfboard repairs, engine work, a tiny home. Written up as they happened, with what actually
+        went wrong included.</p>
+        <p class="oss-tag">Automotive &middot; Motorcycles &middot; Residential &middot; Watersports</p>
+      </div>
+    </a>
+
+  </div>
+
+  <section class="home-about">
+    <div class="home-about-inner">
+      <h2>Who makes this</h2>
+      <p>I'm <strong>Ron Durham</strong> — a manufacturing engineer in San Diego who builds software for physical
+      hardware: production test systems, device diagnostics, and tooling that turns an expert-only procedure into
+      something anyone can run. SMITHtRONiC is where the work I <em>can</em> publish lives.</p>
+      <div class="btn-row">
+        <a class="btn" href="./about/">More about me</a>
+        <a class="btn" href="https://github.com/rodu4835">GitHub</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
