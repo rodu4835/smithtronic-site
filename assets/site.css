@@ -58,11 +58,15 @@ main { flex: 1; }
   padding: 30px 20px 8px;
 }
 .home-hero .s-mark { width: 118px; margin-bottom: 22px; }
-.home-hero .display { line-height: 1.32; max-width: 15ch; }
+/* No width cap on the headline: .display is already clamp(28px, 4.4vw, 44px)
+   and the <br> sets the break. A max-width here only squeezes small screens
+   into a narrow column, which is where the type is smallest already. */
+.home-hero .display { line-height: 1.32; }
 .home-hero .tagline { max-width: 620px; line-height: 1.6; }
 .home-hero .btn-row { margin-top: 26px; }
-@media (min-width: 900px) {
-  .home-hero .display { max-width: none; }
+@media (max-width: 560px) {
+  .home-hero { padding-top: 18px; }
+  .home-hero .s-mark { width: 92px; margin-bottom: 18px; }
 }
 
 /* ---------- home: who makes this ----------
