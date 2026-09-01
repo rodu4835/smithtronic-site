@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OpenMBB: Open-Source Diagnostics for Zero Electric Motorcycles - Smithtronic</title>
-<meta name="description" content="A free, open-source desktop tool that reads a Gen2 Zero electric motorcycle's own diagnostics — battery health, error logs, and ride analysis over the MBB service port.">
+<meta name="description" content="A free, open-source desktop tool that reads a Gen2 Zero electric motorcycle's own diagnostics over the MBB service port — battery health, error logs, ride analysis, and a plain verdict on the pack.">
 <link rel="icon" href="../../assets/img/favicon.png">
 <link rel="stylesheet" href="../../assets/fonts.css?v=3a0a7104">
 <link rel="stylesheet" href="../../assets/site.css?v=65c8c0b9">
@@ -25,7 +25,7 @@
 <main>
   <div class="page-head">
     <h1 class="page-title">OpenMBB: Open-Source Diagnostics for Zero Electric Motorcycles</h1>
-    <p class="page-sub">A free desktop app that reads a Gen2 Zero's own diagnostics over the service port — battery health, error logs, and ride analysis, with a built-in simulator.</p>
+    <p class="page-sub">A free desktop app that reads a Gen2 Zero's own diagnostics over the service port — battery health, error logs, ride analysis — and ends in a plain verdict on the pack. Built-in simulator included.</p>
   </div>
 
   <hr class="rule">
@@ -52,6 +52,12 @@
         data, so "how's the pack doing?" gets a real answer instead of a guess.</li>
         <li><strong>Ride and gearing analysis</strong> &mdash; your ride history decoded
         from the bike's own event log, plus charts and sprocket math helpers.</li>
+        <li><strong>A plain verdict</strong> &mdash; the condition check answers what a
+        buyer standing next to an unfamiliar bike actually wants to know: <em>is this
+        battery sound?</em> It grades only what the capture can prove, says how many
+        checks went unanswered rather than guessing, and saves a dated condition
+        report. A guided Inspect-a-bike flow walks the whole visit &mdash; park it,
+        test the cable, pull the data, read the verdict.</li>
         <li><strong>A built-in simulator</strong> &mdash; the entire app works with no
         bike connected, so you can explore every screen before you ever plug in.</li>
         <li><strong>Windows and Linux builds</strong> &mdash; a Windows installer,
@@ -72,11 +78,22 @@
       whitelist; the Writes tab doubles as a reference of what's adjustable
       (sprocket/speedo trim, custom-mode speed, torque, and regen) &mdash; each setting
       shown with its effect and its risk &mdash; and any change is gated behind console
-      login, a master unlock, and a per-write confirmation. It's an unofficial
+      login, a master unlock, and a per-write confirmation. Every write is
+      journalled &mdash; what was asked, what the console answered, and what the bike
+      actually held afterwards &mdash; because a tool like this should record what
+      <em>happened</em>, not what it hoped for. It's an unofficial
       hobby tool, not affiliated with Zero Motorcycles, verified on my own 2017 FXS;
       other Gen2-era Zeros (roughly 2013&ndash;2019 S, SR, DS, DSR, FX, and the FXE)
       share the same console but are untested &mdash; so reads are the point, and writes
       are at your own risk.</p>
+
+      <h3>Private by Construction:</h3>
+      <p>OpenMBB makes <strong>no network requests</strong> &mdash; no telemetry, no
+      update check, no crash reporting, no account. It has no HTTP client at all, and
+      the test suite enforces that promise on every build. Your captures stay on your
+      machine. If you ever want to share one, the share-safe export strips the VIN
+      and serial numbers, re-scans everything it writes, and shows you every file
+      line by line before anything leaves your hands.</p>
 
       <h3>The Hardware Side:</h3>
       <p>The whole interface is one inexpensive FTDI TTL-serial cable wired to the
